@@ -5,6 +5,9 @@
 # print('Result: ', 5 // 2 , min(3, 2 , -5.3, 4))
 # input('Write ur name: ')
 # print('Nice to meet u')
+# name = 'serge'
+# age = 11
+# print(f'Hello {name} and ur age is {age}')
 ### Переменные и типы данных
 # short , int , long , char , float , bite , boolean , double
 # number = 5.6745 # float
@@ -95,7 +98,7 @@
 #   else:
 #        found = False
 # print(found)
-### Списки (list). Функции и их методы
+### Списки (list). Функции и их методы   [][][]
 # nums = [[1, 2, False], 5, 1, 2, 3, 4, 5, 6, True , 'Hi', 1.245]
 # nums[1] = 1
 # nums[8] = False
@@ -127,6 +130,242 @@
 #    a += 1
 # print(user_list)
 ### Функции строк . Индексы и срезы
+# word = 'study'
+# word = 'Hi, Hello, Whats_up'
+# print(len(word), word[0], word[1], word[2], word[3], word[4])
+# print(word.count('s')) # поиск отдельных символов
+# print(word.upper() + word.lower())
+# print(word.isupper(), word.islower())
+# print(word.capitalize())
+# print(word.find('y')) # поиск номера символа в листе
+# print(word.split(', '))
+# words = word.split(', ')
+# print(words[2]) # вот как сделать список по другому
+# word = 'Hey, Hello, Hi'
+# ff = word.split(', ')
+# for a in range(len(ff)):
+#    ff[a] = ff[a].capitalize()
+# result =', '.join(ff)
+# print(result)
+# word = 'YeSnoTKish' # Index cuts
+# print(word[5:-1:2])
+# list = [ 5, 7 , 'hello', True]
+# print(list[0:3])
+##НАПОМИНАЛКА about Type conversion and casting
+# Python automatically converts
+# d to float as it is a float multiplication
+# d = a * b
+# print(d)
+# print(type(d)) ///
+# type Casting
+# a = 5.9
+# typecast to int
+# n = int(a)
+# print(n)
+# print(type(n)) ///
+# string variable
+# a = "5.9"
+# typecast to float
+# n = float(a)
+# print(n)
+# print(type(n))
+### Кортежи - tuple , примерно те же списки только меньше путей и веса ()()()
+# tuple = (1, 3, 45, False, 7.4, 'Hello')
+# print(tuple[::3])
+# print(tuple.count(45))
+# print(len(tuple))
+# print(tuple)
+# tuple = 1, False, True, 5.9
+# print(tuple[::1])
+# tupl = (1, 3, 45, False, 7.4, 'Hello')
+# for i in tupl:
+#   print(i)
+# nums = [5, 5, 4]
+# new_nums = tuple(nums)
+# print(new_nums)
+# say = tuple('Hi, my name George')
+# print(say)
+### Словари и функции для работы с ними - dict {}{}{}
+# towns = {'Towns': 4} # Ключ : то что после открытия ключом
+# print(towns["Towns"])
+# country = {'code': 'USA bombs', 'code1': 'Russia bombs', 'populationRU': '62.457.835'}
+# print(country['populationRU'])
+# country = dict(code='Russian', code1='Usa')
+# print(country['code1'])
+# country = {'code': 'USA bombs', 'code1': 'Russia bombs'}
+# print(country.items())
+# for key, opened in country.items():
+#    print(key, ' <---> ', opened)
+# country = {'code': 'USA bombs', 'code1': 'Russia bombs'}
+# print(country.get('code1')) # =[key]
+# country.clear()
+# country.popitem()
+# country.pop('code')
+# print(country.values())
+# country['code1'] = "They lost it"
+# rint(country.keys())
+# human = {
+#     'Alternative human':{
+#         'age': "15-18",
+#         'size': 6.3,
+#         'iq': "~100~",
+#         'is he think like me?': {"YES": 'dont believe', "NO": 'of course'}
+#     },
+#     'Vika':{
+#         '!': "just break up with atrashkov",
+#         '!?': "just break up with atrashkov",
+#         'is she love him?': ['I D K', '100% NO', False]
+#     }
+# }
+# print(human['Alternative human']['is he think like me?']['YES'])
+# print(human['Vika']['is she love him?'])
+### Множества <=> set , frozen
+# data = set('hi')
+# print(data)
+# если указываем ключи мы создаем словарь , если нет то множество
+# data = {'key', 7 , 6 , 4, 5, 7, 6, 5}
+# data.update([35, 98, 'k', True])
+# data.add(90)
+# data.remove(90)
+# data.pop()
+# data.clear()
+# print(data)
+# data = frozenset([5, 4, 5, 6, 7, 120]) # свойство кортежей
+# print(data)
+### Функции - def - lambda
+# def testing_func():
+#    print('Hi', end='!')
+#    print(' -  hello?')
+#    pass # = nothing
+
+# testing_func()
+
+# def test():
+#    word = 'Hello!'
+#    count = 0
+#    for a in word:\
+#            print(a * 10)
+#    if a == '!':
+#         count += 1
+#        print('Count: ', count)
+
+# test()
+
+# def test(key):
+#    print(key, end='!')
+
+
+# test('Hello')
+# test(111111111888888888888)
+
+# def test_summa(hi, abc):
+#    return hi + abc
+#    data = hi + abc
+#    return data
+##   print('Result:  ', data)
+
+##  test_summa(17.33 , 16.67)
+# data = test_summa('Hello', "!?")
+# print(data)
+# print(test_summa(3.33, 6.67))
+
+# def poisk_min(l):
+#    minimal = l[0]
+#    for b in l:
+#        if b < minimal:
+#             minimal = b
+
+
+#    print(minimal)
+
+
+# spisok10 = [1, 5, 25, 2, 6]
+# poisk_min(spisok10)
+
+
+# spisok1 = [1, 5, 25, 2, 6, 25, 10]
+# print(poisk_min(spisok1))
+
+# spisok1 = [1, 5, 25, 2, 0.5, 6]
+# min = spisok1[0]
+# for i in spisok1:
+#     if i < min: # if i > min: = max
+#         min = i
+
+# print(min)
+
+## lamda > def
+alo_f = lambda a, b: a * b
+print(alo_f(100, 3.33))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
