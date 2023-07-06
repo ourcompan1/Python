@@ -9,7 +9,7 @@
 # вне классов - переменная \ в классах - поле
 # В oop конструктор класса — специальный блок инструкций, вызываемый при создании объекта.
 # Переопределение методов --- другими словами установка значений полей по умолчанию в дочерних методах
-#
+# __init__ --- конструктор
 #
 #
 ###
@@ -71,56 +71,56 @@
 #
 #
 
-class build: # общие характерестики в родительском классе
-    __price = None
-    __country = None
-
-    def __init__(self, price=None, country=None):
-        self.price = price
-        self.country = country
-
-    def get_info(self):
-        print('Country: ', self.country, '. Price = ', self.price)
-
-
-class Hospital(build): # общие + доп в классе наследнике ( 2ой супер класс добавить через , нельзя ) = отсуствует множественное наследование в питоне
-    doctors = None
-
-    def __init__(self, doctors=None, price=None, country=None): # если в супер классе было переопределенпие то и в наследнкике тоже так сделать надо
-        super(Hospital, self).__init__(price, country)  # супер ( класс куда пердаем +метод сенлф ).какой метод ( что передаем
-        self.doctors = doctors
-
-    def get_info(self):
-        super(Hospital, self).get_info() # здесь1 --- тут мы сделали так называемый полиформизм
-        print('Workers in hospotal: ', self.doctors)
-class palata(Hospital): # наследник класса госпиталь которые наследует от класса здание
-    beds = None
-
-    def __init__(self, beds=None, doctors=None, price=None, country=None):
-        super(palata, self).__init__(doctors, price, country)
-        self.beds = beds
-
-    def get_info(self): # и здесь1 --- тут мы сделали так называемый полиформизм
-        super(palata, self).get_info()
-        print('V palate: ', self.beds, ' beds.')
-class camp(build):
-    population = 0
-    cars = None
-
-
-class home(build):
-    pass
-
-home1 = home('15000 $', 'China')
-home1.get_info()
-hospital1 = palata(62, 55, '225000 $', 'Portugal')
-hospital1.get_info()
-camp1 = camp('6700 $', 'Belarus')
-camp1.get_info()
-
-# home1.get_info()
-# hospital1.get_info()
-# camp1.get_info()
+# class build: # общие характерестики в родительском классе
+#     __price = None
+#     __country = None
+#
+#     def __init__(self, price=None, country=None):
+#         self.price = price
+#         self.country = country
+#
+#     def get_info(self):
+#         print('Country: ', self.country, '. Price = ', self.price)
+#
+#
+# class Hospital(build): # общие + доп в классе наследнике ( 2ой супер класс добавить через , нельзя ) = отсуствует множественное наследование в питоне
+#     doctors = None
+#
+#     def __init__(self, doctors=None, price=None, country=None): # если в супер классе было переопределенпие то и в наследнкике тоже так сделать надо
+#         super(Hospital, self).__init__(price, country)  # супер ( класс куда пердаем +метод сенлф ).какой метод ( что передаем
+#         self.doctors = doctors
+#
+#     def get_info(self):
+#         super(Hospital, self).get_info() # здесь1 --- тут мы сделали так называемый полиформизм
+#         print('Workers in hospotal: ', self.doctors)
+# class palata(Hospital): # наследник класса госпиталь которые наследует от класса здание
+#     beds = None
+#
+#     def __init__(self, beds=None, doctors=None, price=None, country=None):
+#         super(palata, self).__init__(doctors, price, country)
+#         self.beds = beds
+#
+#     def get_info(self): # и здесь1 --- тут мы сделали так называемый полиформизм
+#         super(palata, self).get_info()
+#         print('V palate: ', self.beds, ' beds.')
+# # class camp(build):
+# # #     population = 0
+# # #     cars = None
+# # #
+# # #
+# # # class home(build):
+# # #     pass
+# # #
+# # home1 = home('15000 $', 'China')
+# # home1.get_info()
+# # hospital1 = palata(62, 55, '225000 $', 'Portugal')
+# # hospital1.get_info()
+# # camp1 = camp('6700 $', 'Belarus')
+# # camp1.get_info()
+# #
+# # # home1.get_info()
+# # hospital1.get_info()
+# # camp1.get_info()
 
 
 
@@ -128,5 +128,44 @@ camp1.get_info()
 # как бы защита однако изменить
 
 # hospital1.price = 5 # обрабатываеться коректно
-hospital1.__country = 5 # так тоже , тогда зачем эта недоделанная инкапсулиция
+# hospital1.__country = 5 # так тоже , тогда зачем эта недоделанная инкапсулиция
 # print(home1.__country) # тут не даёт вывести ( в питоне считаю следует знать такую концепцию , хоть её и не особо то и надо использовать
+#
+###       iterator --- это объект, который возвращает свои элементы по одному за раз. С точки зрения Python - это любой объект, у которого есть метод__ next__. Этот метод возвращает следующий элемент, если он есть, или возвращает исключение StopIteration, когда элементы закончились. Кроме того, итератор запоминает, на каком объекте он остановился в последнюю итерацию.
+#
+#
+#
+#
+nums = [10, 3, 5, 7, 'Hello']
+i = iter(nums)
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+
+word = 'Tima'
+a = iter(word)
+print(next(a))
+print(next(a))
+print(next(a))
+print(next(a))
+
+r = range(10, 16)
+b = iter(r)
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+print(next(b))
+
+for a in range(10): # оператор фор пользуется итерацией
+   print(a)
+
+
+
+
+
+
+
